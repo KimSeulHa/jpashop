@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             version="2.2"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence">
+    <persistence-unit name="hello">
+        <properties>
+            <!--필수 속성-->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/jpashop"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!--[중요]특정 데이터 베이스에 종속되지 않음
+            value="org.hibernate.dialect.H2Dialect
+            value="org.hibernate.dialect.orcle
+            -->
+
+            <!--옵션-->
+            <property name="hibernate.show_sql" value="true"/><!--DB에 쿼리 나가는 것을 console로 볼 것인지-->
+            <property name="hibernate.formal_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.jdbc.batch_size" value="10"/> <!--버퍼링을 모아서 쓰기-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
